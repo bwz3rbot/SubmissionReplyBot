@@ -1,15 +1,11 @@
-
 USER_AGENT=''
 CLIENT_ID=''
 CLIENT_SECRET=''
 REDDIT_USER=''
 REDDIT_PASS=''
-MASTER_SUB='Bwz3rBot'
-SUBREDDITS='Bwz3rBot, IntWatch, AnotherBotFarm'
-DEBUG_CODE='false'
+MASTER_SUB=''
 DEBUG_NETWORK='false'
-STARTUP_LIMIT='7'
+STARTUP_LIMIT='5'
+INTERVAL='30'
 SUBMISSION_LIMIT='50'
-MENTIONS_LIMIT='50'
-COMMAND_PREFIX="!"
-THREAD_ID=''
+MESSAGE="Thanks for posting on FanArtAnything please read the rules. If you have questions please contact the mods have a great day."

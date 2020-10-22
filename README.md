@@ -3,7 +3,7 @@
  <img width=200px height=300px src="https://imgur.com/ciey6EG.jpg" alt="Project logo"></a>
 </p>
 
-<h1 align="center">Snoolicious RTS v1</h1>
+<h1 align="center">r/FanArtAnything Bot</h1>
 
 <div align="center">
 

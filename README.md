@@ -65,11 +65,8 @@ __MASTER_SUB__ is the subreddit the SubMonitor Service will work on.\
 __DEBUG_CODE__ and __DEBUG_NETWORK__ should be set to false unless any problems arise.\
 __STARTUP_LIMIT__ will cause the bot to check this many items on the first sweep. Setting this value higher will ensure that when stopping and restarting the bot, no requests are forgotten. This value may be set up to 100\
 __SUBMISSION_LIMIT__ Will limit the amount of tasks the __SubMonitorBot Service__ and __MultiSubMonitor Service__ will generate on each sweep after the first. On very active subs with many submissions per minute, this option may be set up to 100.\
-__INTERVAL__ The time (in seconds) which the bot should sleep between doing its job again. Easily changed to minutes for production by simply multiplying the value by 60 before pushing out your code.
-```
-https://www.reddit.com/r/Bwz3rBot/comments/ja6v32/bot_command_thread/
-```
-
+__INTERVAL__ The time (in seconds) which the bot should sleep between doing its job again. Easily changed to minutes for production by simply multiplying the value by 60 before pushing out your code.\
+__MESSAGE__ The message the bot will reply with when it sees a new post in your sub.
 
 
 
@@ -82,8 +79,11 @@ REDDIT_PASS="YOUR BOT'S PASSWORD"
 MASTER_SUB="Bwz3rBot"
 DEBUG_CODE="false"
 DEBUG_NETWORK="false"
-STARTUP_LIMIT="15"
-SUBMISSION_LIMIT="50"
+DEBUG_NETWORK='false'
+STARTUP_LIMIT='25'
+INTERVAL='30'
+SUBMISSION_LIMIT='50'
+MESSAGE="Thanks for posting on FanArtAnything please read the rules. If you have questions please contact the mods have a great day."
 ```
 
 

@@ -66,6 +66,7 @@ async function handleSubmission(task) {
     const id = `${task.item.parent_id}${task.item.id}${task.item.created_utc}`;
     // Check if the item was saved first.
     if (!task.item.saved) {
+        console.log("replying");
         await snoolicious.requester.getSubmission(task.item.id).reply(process.env.MESSAGE);
         console.log("saving");
         await snoolicious.requester.getSubmission(task.item.id).save();

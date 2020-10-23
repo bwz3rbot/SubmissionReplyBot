@@ -27,10 +27,9 @@ const snoolicious = new Snoolicious();
                 }
 */
 async function handleCommand(task) {
-    const id = `${task.item.parent_id}${task.item.id}${task.item.created_utc}`;
-    const checkedId = await db.checkID(id);
+    const isSaved = await snoolicious.requester.getComment(task.item).saved;
     // Check if the item was saved first.
-    if (!checkedId) {
+    if (!isSaved) {
         console.log("New Command recieved: ".yellow);
         switch (task.command.directive) {
             case 'help':
@@ -42,12 +41,11 @@ async function handleCommand(task) {
         }
         // Save the item so snoolicious won't process it again.
         console.log("saving");
-        await db.saveID(id);
+        await snoolicious.requester.getComment(task.item.id).save();
     } else {
         console.log("Item was already saved!".red);
     }
     console.log("Size of the queue: ", snoolicious.tasks.size());
-
 }
 /*
     [Handle Submission]
@@ -69,8 +67,6 @@ async function handleSubmission(task) {
     // Check if the item was saved first.
     if (!task.item.saved) {
         await snoolicious.requester.getSubmission(task.item.id).reply(process.env.MESSAGE);
-
-
         console.log("saving");
         await snoolicious.requester.getSubmission(task.item.id).save();
     } else {
